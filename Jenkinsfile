@@ -12,7 +12,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git branch: 'main',
-                    credentialsId: 'git-cred',
+                    // credentialsId: 'git-cred',
                     url: 'https://github.com/ningarajgani/scriblog-miniproject.git'
             }
         }
@@ -37,3 +37,4 @@ pipeline {
         }
     }
 }
+
