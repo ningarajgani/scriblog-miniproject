@@ -17,16 +17,16 @@ pipeline {
             }
         }
 
-    //     stage('Verify Text File') {
-    //         steps {
-    //             echo 'Listing files in repo...'
-    //             sh 'ls -l'
+        // stage('Verify Text File') {
+        //     steps {
+        //         echo 'Listing files in repo...'
+        //         sh 'ls -l'
 
-    //             echo 'Displaying text file content'
-    //             sh 'cat *.txt || echo "No text file found, but build will still succeed"'
-    //         }
-    //     }
-    // }
+        //         echo 'Displaying text file content'
+        //         sh 'cat *.txt || echo "No text file found, but build will still succeed"'
+        //     }
+        // }
+    }
 
     post {
         success {
