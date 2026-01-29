@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        jdk 'jdk17'
-    }
-
-
     stages {
 
         stage('Clean Workspace') {
@@ -22,18 +17,23 @@ pipeline {
             }
         }
 
+        stage('Verify Text File') {
+            steps {
+                echo 'Listing files in repo...'
+                sh 'ls -l'
+
+                echo 'Displaying text file content'
+                sh 'cat *.txt || echo "No text file found, but build will still succeed"'
+            }
+        }
+    }
 
     post {
         success {
-           
-            echo 'successfully completed integration'
-        }
-        unstable {
-            echo 'CI completed with Quality Gate warnings'
+            echo 'Build SUCCESS ✅'
         }
         failure {
-            echo 'CI Pipeline failed'
+            echo 'Build FAILED ❌'
         }
-       
     }
 }
